@@ -1,10 +1,6 @@
 # My version of an app template, modified by James Cox (imajes)
 # SUPER DARING APP TEMPLATE 1.0 - By Peter Cooper
 
-# Link to local copy of edge rails
-inside('vendor') { run 'ln -s ~/src/git/rails rails' }
-inside('vendor/rails') { run 'git pull' }
-
 # Delete unnecessary files
 run "rm README"
 run "rm public/index.html"
