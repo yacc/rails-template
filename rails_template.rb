@@ -85,6 +85,12 @@ if yes?("Will this app have authenticated users?")
   generate("roles", "Role User")
 end
 
+#Subdomains: http://railscasts.com/episodes/123-subdomains
+if yes?("Will this app require a sub-domain per account ?")
+  plugin 'subdomain-fu', :git => 'git://github.com/mbleigh/subdomain-fu.git'
+
+end
+
 if yes?("OpenID Support?")
   plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authentication.git'
   rake('open_id_authentication:db:create')
@@ -100,6 +106,11 @@ end
 if yes?("Want to require a bunch of useful gems?")
   gem 'hpricot', :source => 'http://code.whytheluckystiff.net'
   gem 'RedCloth', :lib => 'redcloth'
+end
+
+# add nifty layout (generators)
+if yes?("Want to add layout (nifty)?")
+  generate :nifty_layout
 end
 
 # Final install steps
